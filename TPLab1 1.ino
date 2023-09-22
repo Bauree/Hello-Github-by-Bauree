@@ -28,12 +28,19 @@ void setup(){
 }
 void loop(){
   while(contador < maximo){
-    if (Bot1 == HIGH){
+    if (digitalRead(Bot1) == HIGH){
  	contador ++;
- }
-    else if(Bot2 == HIGH){
-    contador --;
-  }
+      delay(100);
+    }
+    else if(digitalRead(Bot2) == HIGH){
+      if (contador == 0){
+      contador = 99;
+      }
+       if (contador != 0){
+          contador --;
+         delay(100);
+       }
+    }
     mostrar(contador);
 }
   contador = 0;
@@ -59,7 +66,7 @@ void mostrar(int contador){
     case 8: ocho();break;
   	case 9: nueve();break;
   }
-  delay(100);
+  delay(25);
   
   digitalWrite(TD1,LOW);
   digitalWrite(TD2,HIGH);
@@ -75,7 +82,7 @@ void mostrar(int contador){
     case 8: ocho();break;
   	case 9: nueve();break;
   }
-  delay (100);
+  delay (25);
 }
 
 void cero(){
