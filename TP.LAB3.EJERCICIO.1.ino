@@ -21,7 +21,13 @@ char *punteroestado = &luces[0];
 void setup()
 {
   pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
   pinMode(boton1,INPUT);
+  pinMode(boton2,INPUT);
+  pinMode(boton3,INPUT);
+  pinMode(boton4,INPUT);
   Serial.begin(9600);
  
 }
